@@ -1,4 +1,4 @@
-# Dicoding_Submission 
+# Dicoding Submission 
 
 Repository ini merupakan starter project submission kelas Flutter Expert Dicoding Indonesia.
 
