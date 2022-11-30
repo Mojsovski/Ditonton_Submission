@@ -1,27 +1,27 @@
 import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/domain/entities/movie/movie.dart';
-import 'package:ditonton/domain/usecases/get_popular_movies.dart';
+import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:ditonton/domain/usecases/tv/get_popular_tvs.dart';
 import 'package:flutter/foundation.dart';
 
-class PopularMoviesNotifier extends ChangeNotifier {
-  final GetPopularMovies getPopularMovies;
+class PopularTvsNotifier extends ChangeNotifier {
+  final GetPopularTvs getPopularTvs;
 
-  PopularMoviesNotifier(this.getPopularMovies);
+  PopularTvsNotifier(this.getPopularTvs);
 
   RequestState _state = RequestState.Empty;
   RequestState get state => _state;
 
-  List<Movie> _movies = [];
-  List<Movie> get movies => _movies;
+  List<Tv> _tvs = [];
+  List<Tv> get tvs => _tvs;
 
   String _message = '';
   String get message => _message;
 
-  Future<void> fetchPopularMovies() async {
+  Future<void> fetchPopularTvs() async {
     _state = RequestState.Loading;
     notifyListeners();
 
-    final result = await getPopularMovies.execute();
+    final result = await getPopularTvs.execute();
 
     result.fold(
       (failure) {
@@ -29,8 +29,8 @@ class PopularMoviesNotifier extends ChangeNotifier {
         _state = RequestState.Error;
         notifyListeners();
       },
-      (moviesData) {
-        _movies = moviesData;
+      (tvsData) {
+        _tvs = tvsData;
         _state = RequestState.Loaded;
         notifyListeners();
       },

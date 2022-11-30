@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:ditonton/data/models/tv/tv_table.dart';
 import 'package:sqflite/sqflite.dart';
 
-class DatabaseHelper {
-  static DatabaseHelper? _databaseHelper;
-  DatabaseHelper._instance() {
+class DatabaseHelperTv {
+  static DatabaseHelperTv? _databaseHelper;
+  DatabaseHelperTv._instance() {
     _databaseHelper = this;
   }
 
-  factory DatabaseHelper() => _databaseHelper ?? DatabaseHelper._instance();
+  factory DatabaseHelperTv() => _databaseHelper ?? DatabaseHelperTv._instance();
 
   static Database? _database;
 
@@ -20,7 +20,7 @@ class DatabaseHelper {
     return _database;
   }
 
-  static const String _tblWatchlist = 'watchlist';
+  static const String _tblWatchlist = 'watchlist_tv';
 
   Future<Database> _initDb() async {
     final path = await getDatabasesPath();

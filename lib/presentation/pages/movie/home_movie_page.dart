@@ -4,15 +4,17 @@ import 'package:ditonton/domain/entities/movie/movie.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/movie/movie_detail_page.dart';
 import 'package:ditonton/presentation/pages/movie/popular_movies_page.dart';
-import 'package:ditonton/presentation/pages/movie/search_page.dart';
+import 'package:ditonton/presentation/pages/movie/search_movie_page.dart';
 import 'package:ditonton/presentation/pages/movie/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
+import 'package:ditonton/presentation/pages/tv/home_tv_page.dart';
 import 'package:ditonton/presentation/provider/movie/movie_list_notifier.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomeMoviePage extends StatefulWidget {
+  static const ROUTE_NAME = '/home-movie';
   @override
   _HomeMoviePageState createState() => _HomeMoviePageState();
 }
@@ -43,9 +45,16 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ),
             ListTile(
               leading: Icon(Icons.movie),
-              title: Text('Movies'),
+              title: Text('Movie'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pop(context, HomeMoviePage.ROUTE_NAME);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.tv),
+              title: Text('TV'),
+              onTap: () {
+                Navigator.pop(context, HomeTvPage.ROUTE_NAME);
               },
             ),
             ListTile(
