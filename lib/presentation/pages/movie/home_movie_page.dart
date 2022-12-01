@@ -6,7 +6,7 @@ import 'package:ditonton/presentation/pages/movie/movie_detail_page.dart';
 import 'package:ditonton/presentation/pages/movie/popular_movies_page.dart';
 import 'package:ditonton/presentation/pages/movie/search_movie_page.dart';
 import 'package:ditonton/presentation/pages/movie/top_rated_movies_page.dart';
-import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
+import 'package:ditonton/presentation/pages/watchlist_page.dart';
 import 'package:ditonton/presentation/pages/tv/home_tv_page.dart';
 import 'package:ditonton/presentation/provider/movie/movie_list_notifier.dart';
 import 'package:ditonton/common/state_enum.dart';
@@ -34,6 +34,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+        key: Key('movie'),
         child: Column(
           children: [
             UserAccountsDrawerHeader(
@@ -47,21 +48,21 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               leading: Icon(Icons.movie),
               title: Text('Movie'),
               onTap: () {
-                Navigator.pop(context, HomeMoviePage.ROUTE_NAME);
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: Icon(Icons.tv),
               title: Text('TV'),
               onTap: () {
-                Navigator.pop(context, HomeTvPage.ROUTE_NAME);
+                Navigator.pushNamed(context, HomeTvPage.ROUTE_NAME);
               },
             ),
             ListTile(
               leading: Icon(Icons.save_alt),
               title: Text('Watchlist'),
               onTap: () {
-                Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
+                Navigator.pushNamed(context, WatchlistPage.ROUTE_NAME);
               },
             ),
             ListTile(
@@ -75,11 +76,11 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Ditonton'),
+        title: Text('Movie'),
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, SearchPage.ROUTE_NAME);
+              Navigator.pushNamed(context, SearchMoviePage.ROUTE_NAME);
             },
             icon: Icon(Icons.search),
           )

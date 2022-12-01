@@ -16,8 +16,8 @@ class TvListNotifier extends ChangeNotifier {
   var _onTheAirTvs = <Tv>[];
   List<Tv> get onTheAirTvs => _onTheAirTvs;
 
-  RequestState _onTheAirState = RequestState.Empty;
-  RequestState get onTheAirState => _onTheAirState;
+  RequestState _onTheAirTvsState = RequestState.Empty;
+  RequestState get onTheAirTvsState => _onTheAirTvsState;
 
   var _popularTvs = <Tv>[];
   List<Tv> get popularTvs => _popularTvs;
@@ -66,18 +66,18 @@ class TvListNotifier extends ChangeNotifier {
   }
 
   Future<void> fetchOnTheAirTvs() async {
-    _airingTodayState = RequestState.Loading;
+    _onTheAirTvsState = RequestState.Loading;
     notifyListeners();
 
     final result = await getOnTheAirTvs.execute();
     result.fold(
       (failure) {
-        _onTheAirState = RequestState.Error;
+        _onTheAirTvsState = RequestState.Error;
         _message = failure.message;
         notifyListeners();
       },
       (tvsData) {
-        _onTheAirState = RequestState.Loaded;
+        _onTheAirTvsState = RequestState.Loaded;
         _onTheAirTvs = tvsData;
         notifyListeners();
       },

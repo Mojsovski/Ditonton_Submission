@@ -5,9 +5,11 @@ import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/movie/home_movie_page.dart';
 import 'package:ditonton/presentation/pages/tv/tv_detail_page.dart';
 import 'package:ditonton/presentation/pages/tv/popular_tvs_page.dart';
+import 'package:ditonton/presentation/pages/tv/airing_today_tvs_page.dart';
 import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/top_rated_tvs_page.dart';
-import 'package:ditonton/presentation/pages/tv/watchlist_tvs_page.dart';
+import 'package:ditonton/presentation/pages/watchlist_page.dart';
+import 'package:ditonton/presentation/pages/tv/on_the_air_tvs_page.dart';
 import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +27,7 @@ class _HomeTvPageState extends State<HomeTvPage> {
     super.initState();
     Future.microtask(() => Provider.of<TvListNotifier>(context, listen: false)
       ..fetchAiringTodayTvs()
+      ..fetchOnTheAirTvs()
       ..fetchPopularTvs()
       ..fetchTopRatedTvs());
   }
@@ -33,6 +36,7 @@ class _HomeTvPageState extends State<HomeTvPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+        key: Key('tv'),
         child: Column(
           children: [
             UserAccountsDrawerHeader(
@@ -46,21 +50,21 @@ class _HomeTvPageState extends State<HomeTvPage> {
               leading: Icon(Icons.movie),
               title: Text('Movie'),
               onTap: () {
-                Navigator.pop(context, HomeMoviePage.ROUTE_NAME);
+                Navigator.pushNamed(context, HomeMoviePage.ROUTE_NAME);
               },
             ),
             ListTile(
               leading: Icon(Icons.tv),
               title: Text('TV'),
               onTap: () {
-                Navigator.pop(context, HomeTvPage.ROUTE_NAME);
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: Icon(Icons.save_alt),
               title: Text('Watchlist'),
               onTap: () {
-                Navigator.pushNamed(context, WatchlistTvsPage.ROUTE_NAME);
+                Navigator.pushNamed(context, WatchlistPage.ROUTE_NAME);
               },
             ),
             ListTile(
@@ -74,7 +78,7 @@ class _HomeTvPageState extends State<HomeTvPage> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Ditonton'),
+        title: Text('TV'),
         actions: [
           IconButton(
             onPressed: () {
@@ -90,9 +94,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Airing Today',
-                style: kHeading6,
+              _buildSubHeading(
+                title: 'Airing Today',
+                onTap: () =>
+                    Navigator.pushNamed(context, AiringTodayTvsPage.ROUTE_NAME),
               ),
               Consumer<TvListNotifier>(builder: (context, data, child) {
                 final state = data.airingTodayState;
@@ -102,6 +107,23 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   );
                 } else if (state == RequestState.Loaded) {
                   return TvList(data.airingTodayTvs);
+                } else {
+                  return Text('Failed');
+                }
+              }),
+              _buildSubHeading(
+                title: 'On TV',
+                onTap: () =>
+                    Navigator.pushNamed(context, OnTheAirTvsPage.ROUTE_NAME),
+              ),
+              Consumer<TvListNotifier>(builder: (context, data, child) {
+                final state = data.onTheAirTvsState;
+                if (state == RequestState.Loading) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (state == RequestState.Loaded) {
+                  return TvList(data.onTheAirTvs);
                 } else {
                   return Text('Failed');
                 }

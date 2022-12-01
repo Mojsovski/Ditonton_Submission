@@ -24,7 +24,7 @@ class _AiringTodayTvsPageState extends State<AiringTodayTvsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Popular Movies'),
+        title: Text('Airing Today'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
