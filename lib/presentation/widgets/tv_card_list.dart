@@ -42,7 +42,9 @@ class TvCard extends StatelessWidget {
                     ),
                     SizedBox(height: 16),
                     Text(
-                      tv.overview ?? '-',
+                      tv.overview == null || tv.overview!.isEmpty
+                          ? 'Overview is not available on this page.'
+                          : tv.overview.toString(),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
