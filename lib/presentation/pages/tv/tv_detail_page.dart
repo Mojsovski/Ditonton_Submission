@@ -173,7 +173,9 @@ class DetailContent extends StatelessWidget {
                               style: kHeading6,
                             ),
                             Text(
-                              tv.overview,
+                              tv.overview.isEmpty
+                                  ? 'Overview is not available on this page.'
+                                  : tv.overview,
                             ),
                             SizedBox(height: 16),
                             Text(
