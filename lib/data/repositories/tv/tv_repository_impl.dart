@@ -46,7 +46,7 @@ class TvRepositoryImpl implements TvRepository {
   @override
   Future<Either<Failure, List<Tv>>> getTvRecommendations(int id) async {
     try {
-      final result = await remoteDataSource.getTVRecommendations(id);
+      final result = await remoteDataSource.getTvRecommendations(id);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));

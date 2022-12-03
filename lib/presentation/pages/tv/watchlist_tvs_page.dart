@@ -35,6 +35,9 @@ class _WatchlistTvsPageState extends State<WatchlistTvsPage> with RouteAware {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Watchlist TV'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Consumer<WatchlistTvNotifier>(

@@ -36,6 +36,9 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Watchlist Movie'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Consumer<WatchlistMovieNotifier>(

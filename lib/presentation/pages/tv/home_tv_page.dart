@@ -8,7 +8,8 @@ import 'package:ditonton/presentation/pages/tv/popular_tvs_page.dart';
 import 'package:ditonton/presentation/pages/tv/airing_today_tvs_page.dart';
 import 'package:ditonton/presentation/pages/tv/search_tv_page.dart';
 import 'package:ditonton/presentation/pages/tv/top_rated_tvs_page.dart';
-import 'package:ditonton/presentation/pages/watchlist_page.dart';
+import 'package:ditonton/presentation/pages/tv/watchlist_tvs_page.dart';
+import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/pages/tv/on_the_air_tvs_page.dart';
 import 'package:ditonton/presentation/provider/tv/tv_list_notifier.dart';
 import 'package:ditonton/common/state_enum.dart';
@@ -62,9 +63,16 @@ class _HomeTvPageState extends State<HomeTvPage> {
             ),
             ListTile(
               leading: Icon(Icons.save_alt),
-              title: Text('Watchlist'),
+              title: Text('Watchlist Movie'),
               onTap: () {
-                Navigator.pushNamed(context, WatchlistPage.ROUTE_NAME);
+                Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.save_alt),
+              title: Text('Watchlist TV'),
+              onTap: () {
+                Navigator.pushNamed(context, WatchlistTvsPage.ROUTE_NAME);
               },
             ),
             ListTile(
