@@ -400,7 +400,7 @@ class MockTvRemoteDataSource extends _i1.Mock
           as _i7.Future<_i4.TvDetailResponse>);
   @override
   _i7.Future<List<_i21.TvModel>> getTvRecommendations(int? id) =>
-      (super.noSuchMethod(Invocation.method(#getTVRecommendations, [id]),
+      (super.noSuchMethod(Invocation.method(#getTvRecommendations, [id]),
               returnValue:
                   _i7.Future<List<_i21.TvModel>>.value(<_i21.TvModel>[]))
           as _i7.Future<List<_i21.TvModel>>);

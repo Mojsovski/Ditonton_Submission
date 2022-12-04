@@ -1,38 +1,35 @@
 import 'dart:convert';
 
-import 'package:ditonton/data/models/movie/movie_model.dart';
-import 'package:ditonton/data/models/movie/movie_response.dart';
+import 'package:ditonton/data/models/tv/tv_model.dart';
+import 'package:ditonton/data/models/tv/tv_response.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../json_reader.dart';
+import '../../../json_reader.dart';
 
 void main() {
-  final tMovieModel = MovieModel(
-    adult: false,
+  final tTvModel = TvModel(
     backdropPath: "/path.jpg",
     genreIds: [1, 2, 3, 4],
     id: 1,
-    originalTitle: "Original Title",
+    originalName: "Original Name",
     overview: "Overview",
     popularity: 1.0,
     posterPath: "/path.jpg",
-    releaseDate: "2020-05-05",
-    title: "Title",
-    video: false,
+    firstAirDate: "2020-10-01",
+    name: "Name",
     voteAverage: 1.0,
     voteCount: 1,
   );
-  final tMovieResponseModel =
-      MovieResponse(movieList: <MovieModel>[tMovieModel]);
+  final tTvResponseModel = TvResponse(tvList: <TvModel>[tTvModel]);
   group('fromJson', () {
     test('should return a valid model from JSON', () async {
       // arrange
       final Map<String, dynamic> jsonMap =
-          json.decode(readJson('dummy_data/movie/now_playing.json'));
+          json.decode(readJson('dummy_data/tv/airing_today.json'));
       // act
-      final result = MovieResponse.fromJson(jsonMap);
+      final result = TvResponse.fromJson(jsonMap);
       // assert
-      expect(result, tMovieResponseModel);
+      expect(result, tTvResponseModel);
     });
   });
 
@@ -41,22 +38,20 @@ void main() {
       // arrange
 
       // act
-      final result = tMovieResponseModel.toJson();
+      final result = tTvResponseModel.toJson();
       // assert
       final expectedJsonMap = {
         "results": [
           {
-            "adult": false,
             "backdrop_path": "/path.jpg",
             "genre_ids": [1, 2, 3, 4],
             "id": 1,
-            "original_title": "Original Title",
+            "original_name": "Original Name",
             "overview": "Overview",
             "popularity": 1.0,
             "poster_path": "/path.jpg",
-            "release_date": "2020-05-05",
-            "title": "Title",
-            "video": false,
+            "first_air_date": "2020-10-01",
+            "name": "Name",
             "vote_average": 1.0,
             "vote_count": 1
           }

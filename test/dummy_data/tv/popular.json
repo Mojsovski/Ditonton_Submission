@@ -2,7 +2,6 @@
   "page": 1,
   "results": [
     {
-      "adult": false,
       "backdrop_path": "/path.jpg",
       "genre_ids": [
         1,
@@ -12,13 +11,12 @@
       ],
       "id": 1,
       "original_language": "en",
-      "original_title": "Original Title",
+      "original_name": "Original Name",
       "overview": "Overview",
       "popularity": 1.0,
       "poster_path": "/path.jpg",
-      "release_date": "2020-05-05",
-      "title": "Title",
-      "video": false,
+      "release_date": "2020-10-01",
+      "name": "Title",
       "vote_average": 1.0,
       "vote_count": 1
     }

@@ -17,16 +17,16 @@ class TvModel extends Equatable {
   });
 
   final String? backdropPath;
-  final List<int> genreIds;
+  final List<int>? genreIds;
   final int id;
-  final String originalName;
-  final String overview;
-  final double popularity;
+  final String? originalName;
+  final String? overview;
+  final double? popularity;
   final String? posterPath;
   final String? firstAirDate;
-  final String name;
-  final double voteAverage;
-  final int voteCount;
+  final String? name;
+  final double? voteAverage;
+  final int? voteCount;
 
   factory TvModel.fromJson(Map<String, dynamic> json) => TvModel(
         backdropPath: json["backdrop_path"],
@@ -44,7 +44,7 @@ class TvModel extends Equatable {
 
   Map<String, dynamic> toJson() => {
         "backdrop_path": backdropPath,
-        "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
+        "genre_ids": List<dynamic>.from(genreIds!.map((x) => x)),
         "id": id,
         "original_name": originalName,
         "overview": overview,

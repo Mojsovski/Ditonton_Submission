@@ -33,9 +33,12 @@ final testTvDetail = TvDetail(
   originalName: 'originalName',
   overview: 'overview',
   posterPath: 'posterPath',
+  seasons: [],
   firstAirDate: 'firstAirDate',
   episodeRuntime: [1, 2],
   name: 'name',
+  numberOfEpisodes: 12,
+  numberOfSessions: 1,
   voteAverage: 1.0,
   voteCount: 1,
 );
