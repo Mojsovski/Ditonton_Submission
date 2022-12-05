@@ -49,9 +49,7 @@ void main() {
     'vote_count': 1,
   };
   test('should be json form TvDetailResponse', () async {
-    // assert
     final result = tTvDetailResponse.toJson();
-    // act
     expect(result, tTvDetailResponseJson);
   });
 }

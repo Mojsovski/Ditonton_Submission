@@ -17,9 +17,7 @@ void main() {
   };
 
   test('should be json form TvTable', () async {
-    // assert
     final result = tTvTable.toJson();
-    // act
     expect(result, tTvTableJson);
   });
 }

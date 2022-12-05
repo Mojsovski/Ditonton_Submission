@@ -1,116 +1,69 @@
 {
-  "backdrop_path": "/5DUMPBSnHOZsbBv81GFXZXvDpo6.jpg",
+  "backdrop_path": "/3HvXeJzSztADlAua3l4gjawVhPC.jpg",
   "episode_run_time": [
-    24
+    23
   ],
-  "first_air_date": "2022-10-12",
+  "first_air_date": "2015-01-16",
   "genres": [
     {
       "id": 16,
       "name": "Animation"
     },
     {
-      "id": 10759,
-      "name": "Action & Adventure"
-    },
-    {
-      "id": 10765,
-      "name": "Sci-Fi & Fantasy"
-    },
-    {
       "id": 35,
       "name": "Comedy"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
     }
   ],
-  "homepage": "https://chainsawman.dog/",
-  "id": 114410,
-  "in_production": true,
+  "homepage": "https://www.saenai.tv",
+  "id": 69367,
+  "in_production": false,
   "languages": [
     "ja"
   ],
-  "last_air_date": "2022-11-30",
+  "last_air_date": "2017-06-23",
   "last_episode_to_air": {
-    "air_date": "2022-11-30",
-    "episode_number": 8,
-    "id": 3963648,
-    "name": "GUNFIRE",
-    "overview": "Denji experiences his first, yet devastating, kiss.\n\nAn intoxicated Denji is taken to Himeno's house, where she starts seducing him. Feeling torn between Makima, whom he admires, and Himeno, who is standing in front of him, he decides to fall into temptation. However, Denji then finds something in his pocket: The Chupa Chups lollipop that Makima gave him.",
+    "air_date": "2017-06-23",
+    "episode_number": 11,
+    "id": 1308644,
+    "name": "Resume and Start the Game",
+    "overview": "Tomoya is heartbroken by Utaha and Eriris departure from the Dojin Team, but Megumi takes the opportunity to ask Tomoya out on a date again. Back at Rokutenba Mall, the two of them go around the different stores reliving their previous date here. They visit a hat store last, and Tomoya buys her a certain hat to thank her for cheering him up and to repay her for the glasses she gifted him earlier.",
     "production_code": "",
-    "runtime": 24,
-    "season_number": 1,
-    "show_id": 114410,
-    "still_path": "/oMRTKYMYHQBlFVYvjNuUJWzLYz5.jpg",
-    "vote_average": 9.7,
-    "vote_count": 3
+    "runtime": 23,
+    "season_number": 2,
+    "show_id": 69367,
+    "still_path": "/mcMdE7zkHkNGtn0lEZzYZDKskxX.jpg",
+    "vote_average": 10.0,
+    "vote_count": 1
   },
-  "name": "Chainsaw Man",
-  "next_episode_to_air": {
-    "air_date": "2022-12-07",
-    "episode_number": 9,
-    "id": 3963649,
-    "name": "Episode 9",
-    "overview": "",
-    "production_code": "",
-    "runtime": 24,
-    "season_number": 1,
-    "show_id": 114410,
-    "still_path": null,
-    "vote_average": 0.0,
-    "vote_count": 0
-  },
+  "name": "Saekano: How to Raise a Boring Girlfriend",
+  "next_episode_to_air": null,
   "networks": [
     {
-      "id": 98,
-      "name": "TV Tokyo",
-      "logo_path": "/kGRavMqgyx4p2X4C96bjRCj50oI.png",
-      "origin_country": "JP"
-    },
-    {
-      "id": 252,
-      "name": "TV Aichi",
-      "logo_path": "/zFZ5KCuvx7K0vP9XgGcidfXjuUd.png",
-      "origin_country": "JP"
-    },
-    {
-      "id": 822,
-      "name": "TVQ",
-      "logo_path": "/fGdBR7lxjrXsBlwZF7B1UNpG5ff.png",
-      "origin_country": "JP"
-    },
-    {
-      "id": 824,
-      "name": "TV Osaka",
-      "logo_path": "/6foQmoPac7WCDnDuDbuCZklmDuA.png",
-      "origin_country": "JP"
-    },
-    {
-      "id": 938,
-      "name": "TVh",
-      "logo_path": "/vEUZNYjuSn0iTQyZ3SLNfVgI9Z8.png",
-      "origin_country": "JP"
-    },
-    {
-      "id": 2064,
-      "name": "TV Setouchi",
-      "logo_path": "/qi4L1ffRabF5LJqVimCaaUYpeSj.png",
+      "id": 1,
+      "name": "Fuji TV",
+      "logo_path": "/path.png",
       "origin_country": "JP"
     }
   ],
-  "number_of_episodes": 12,
-  "number_of_seasons": 1,
+  "number_of_episodes": 23,
+  "number_of_seasons": 2,
   "origin_country": [
     "JP"
   ],
   "original_language": "ja",
-  "original_name": "チェンソーマン",
-  "overview": "Denji has a simple dream—to live a happy and peaceful life, spending time with a girl he likes. This is a far cry from reality, however, as Denji is forced by the yakuza into killing devils in order to pay off his crushing debts. Using his pet devil Pochita as a weapon, he is ready to do anything for a bit of cash.",
-  "popularity": 980.872,
-  "poster_path": "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg",
+  "original_name": "Original Name",
+  "overview": "Tomoya Aki is an otaku who has a dream. His dream is to create the best visual novel game ever. The main heroine for this game and the inspiration for this dream is a background character named Megumi Kato who somehow stumbles into main character-esque traits in his eyes. To complete the game in time he has to call upon the aid of his anime loving professional friends who arent so keen on the choice of his main heroine.",
+  "popularity": 31.872,
+  "poster_path": "/path.jpg",
   "production_companies": [
     {
-      "id": 21444,
-      "logo_path": "/wSejGn3lAZdQ5muByxvzigwyDY6.png",
-      "name": "MAPPA",
+      "id": 13113,
+      "logo_path": "/xV5tPYKZhP2Ko9dOh5A3FahuKsx.png",
+      "name": "A1 Pictures",
       "origin_country": "JP"
     }
   ],
@@ -122,25 +75,43 @@
   ],
   "seasons": [
     {
-      "air_date": "2022-10-12",
-      "episode_count": 12,
-      "id": 171559,
-      "name": "Season 1",
+      "air_date": "2015-01-09",
+      "episode_count": 3,
+      "id": 87404,
+      "name": "Specials",
       "overview": "",
-      "poster_path": "/sB2DASpJtfnTs7iK3RqkUMFVDEa.jpg",
+      "poster_path": "/path.jpg",
+      "season_number": 0
+    },
+    {
+      "air_date": "2015-01-16",
+      "episode_count": 12,
+      "id": 83358,
+      "name": "Season 1",
+      "overview": "Tomoya Aki, an otaku, has been obsessed with collecting anime and light novels for years, attaching himself to various series with captivating stories and characters. Now, he wants to have a chance of providing the same experience for others by creating his own game, but unfortunately, Tomoya cannot do this task by himself.\n\nHe successfully recruits childhood friend Eriri Spencer Sawamura to illustrate and literary elitist Utaha Kasumigaoka to write the script for his visual novel, while he directs. Super-group now in hand, Tomoya only needs an inspiration to base his project on, and luckily meets the beautiful, docile Megumi Katou, who he then models his main character after.\n\nUsing what knowledge he has, Tomoya creates a new doujin circle with hopes to touch the hearts of those who play their game. What he does not realize, is that to invoke these emotions, the creators have had to experience the same feelings in their own lives.",
+      "poster_path": "/uiAHspLQkIeq7yFTynLze2eg1Xt.jpg",
       "season_number": 1
+    },
+    {
+      "air_date": "2017-04-14",
+      "episode_count": 11,
+      "id": 86523,
+      "name": "Saekano: How to Raise a Boring Girlfriend",
+      "overview": "After finally completing the first route of his visual novel, Blessing Softwares producer Tomoya Aki is optimistic about the future of his team and achieving their goal of creating the best game of the season.\n\nHowever, they still have a long way to go. For one, Megumi Katou still has an incredibly flat personality and is unable to fit the role of Tomoyas ideal heroine. The other members of Blessing Software, Eriri Spencer Sawamura, Utaha Kasumigaoka, and Michiru Hyoudou, often forget she is even there due to her lack of presence and character.\n\nThroughout the development of their game, Blessing Software learns the struggles of working in an industry where deadlines must be met and edits are made constantly, and the hardships of working in a group setting.",
+      "poster_path": "/epTblXIebhRSbdVcsgq7s873Qwb.jpg",
+      "season_number": 2
     }
   ],
   "spoken_languages": [
     {
       "english_name": "Japanese",
       "iso_639_1": "ja",
-      "name": "日本語"
+      "name": "Name"
     }
   ],
-  "status": "Returning Series",
+  "status": "Ended",
   "tagline": "",
   "type": "Scripted",
-  "vote_average": 8.596,
-  "vote_count": 350
+  "vote_average": 6.756,
+  "vote_count": 43
 }

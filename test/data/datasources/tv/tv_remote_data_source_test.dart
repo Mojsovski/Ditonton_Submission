@@ -7,15 +7,13 @@ import 'package:ditonton/common/exception.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
-import 'package:mockito/annotations.dart';
 
 import '../../../json_reader.dart';
 import '../../../helpers/test_helper.mocks.dart';
 
-@GenerateMocks([http.Client])
 void main() {
   const API_KEY = 'api_key=2174d146bb9c0eab47529b2e77d6b526';
-  const BASE_URL = 'https://api.thetvdb.org/3';
+  const BASE_URL = 'https://api.themoviedb.org/3';
 
   late TvRemoteDataSourceImpl dataSource;
   late MockHttpClient mockHttpClient;
@@ -204,16 +202,15 @@ void main() {
 
   group('search tvs', () {
     final tSearchResult = TvResponse.fromJson(
-            json.decode(readJson('dummy_data/tv/search_makima_tv.json')))
+            json.decode(readJson('dummy_data/tv/search_megumi_tv.json')))
         .tvList;
-    final tQuery = 'Spiderman';
-
+    final tQuery = 'saekano';
     test('should return list of tvs when response code is 200', () async {
       // arrange
       when(mockHttpClient
               .get(Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$tQuery')))
           .thenAnswer((_) async => http.Response(
-              readJson('dummy_data/tv/search_makima_tv.json'), 200));
+              readJson('dummy_data/tv/search_megumi_tv.json'), 200));
       // act
       final result = await dataSource.searchTvs(tQuery);
       // assert
