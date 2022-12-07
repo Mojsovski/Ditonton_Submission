@@ -1,25 +1,22 @@
-import 'package:ditonton/domain/entities/movie/movie.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:ditonton/domain/usecases/movie/search_movies.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_event.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_state.dart';
 
-part 'event/movie_event.dart';
-part 'state/movie_state.dart';
-
-class SearchMovieBloc extends Bloc<MovieEvent, SearchState> {
+class SearchMovieBloc extends Bloc<MovieEvent, MovieState> {
   final SearchMovies _searchMovies;
 
-  SearchMovieBloc(this._searchMovies) : super(SearchEmpty()) {
+  SearchMovieBloc(this._searchMovies) : super(MovieEmpty()) {
     on<OnMovieSearch>((event, emit) async {
       final query = event.query;
 
-      emit(SearchLoading());
+      emit(MovieLoading());
       final result = await _searchMovies.execute(query);
 
       result.fold(
         (failure) {
-          emit(SearchError(failure.message));
+          emit(MovieError(failure.message));
         },
         (data) {
           emit(SearchHasData(data));

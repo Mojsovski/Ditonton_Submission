@@ -3,6 +3,8 @@ import 'package:ditonton/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/search_movie_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_event.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_state.dart';
 
 class SearchMoviePage extends StatelessWidget {
   static const ROUTE_NAME = '/search-movie';
@@ -34,9 +36,9 @@ class SearchMoviePage extends StatelessWidget {
               'Search Result',
               style: kHeading6,
             ),
-            BlocBuilder<SearchMovieBloc, SearchState>(
+            BlocBuilder<SearchMovieBloc, MovieState>(
               builder: (context, state) {
-                if (state is SearchLoading) {
+                if (state is MovieLoading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
@@ -52,7 +54,7 @@ class SearchMoviePage extends StatelessWidget {
                       itemCount: result.length,
                     ),
                   );
-                } else if (state is SearchError) {
+                } else if (state is MovieError) {
                   return Expanded(
                     child: Center(
                       child: Text(state.message),

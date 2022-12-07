@@ -1,34 +1,20 @@
-// import 'package:ditonton/domain/entities/movie/movie.dart';
-// import 'package:equatable/equatable.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:rxdart/rxdart.dart';
-// import 'package:ditonton/domain/usecases/movie/search_movies.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ditonton/domain/usecases/movie/get_now_playing_movies.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_event.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_state.dart';
 
-// part 'event/movie_event.dart';
-// part 'state/movie_state.dart';
+class NowPlayingMoviesBloc extends Bloc<MovieEvent, MovieState> {
+  final GetNowPlayingMovies _getNowPlayingMovies;
 
-// class SearchMovieBloc extends Bloc<MovieEvent, SearchState> {
-//   final SearchMovies _searchMovies;
+  NowPlayingMoviesBloc(this._getNowPlayingMovies) : super(MovieLoading()) {
+    on<OnNowPlayingMovie>((event, emit) async {
+      emit(MovieLoading());
+      final result = await _getNowPlayingMovies.execute();
 
-//   SearchMovieBloc(this._searchMovies) : super(SearchEmpty()) {
-//     on<OnMovieSearch>((event, emit) async {
-//       final query = event.query;
-
-//       emit(SearchLoading());
-//       final result = await _searchMovies.execute(query);
-
-//       result.fold(
-//         (failure) {
-//           emit(SearchError(failure.message));
-//         },
-//         (data) {
-//           emit(SearchHasData(data));
-//         },
-//       );
-//     }, transformer: debounce(const Duration(milliseconds: 500)));
-//   }
-
-//   EventTransformer<T> debounce<T>(Duration duration) {
-//     return (events, mapper) => events.debounceTime(duration).flatMap(mapper);
-//   }
-// }
+      result.fold(
+        (failure) => emit(MovieError(failure.message)),
+        (data) => emit(MovieHasData(data)),
+      );
+    });
+  }
+}

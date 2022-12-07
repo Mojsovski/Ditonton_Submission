@@ -1,8 +1,9 @@
-import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/presentation/provider/movie/top_rated_movies_notifier.dart';
 import 'package:ditonton/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/top_rated_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_state.dart';
+import 'package:ditonton/presentation/bloc/movie/common/movie_event.dart';
 
 class TopRatedMoviesPage extends StatefulWidget {
   static const ROUTE_NAME = '/top-rated-movie';
@@ -15,9 +16,9 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<TopRatedMoviesNotifier>(context, listen: false)
-            .fetchTopRatedMovies());
+    Future.microtask(
+      () => () => context.read<TopRatedMoviesBloc>().add(OnTopRatedMovie()),
+    );
   }
 
   @override
@@ -28,24 +29,33 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<TopRatedMoviesNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
+        child: BlocBuilder<TopRatedMoviesBloc, MovieState>(
+          builder: (context, state) {
+            if (state is MovieLoading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
-              return ListView.builder(
-                itemBuilder: (context, index) {
-                  final movie = data.movies[index];
-                  return MovieCard(movie);
-                },
-                itemCount: data.movies.length,
+            } else if (state is MovieHasData) {
+              final result = state.result;
+              return Expanded(
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemBuilder: (context, index) {
+                    final movie = result[index];
+                    return MovieCard(movie);
+                  },
+                  itemCount: result.length,
+                ),
+              );
+            } else if (state is MovieError) {
+              return Expanded(
+                child: Center(
+                  child: Text(state.message),
+                ),
               );
             } else {
-              return Center(
-                key: Key('error_message'),
-                child: Text(data.message),
+              return Expanded(
+                child: Container(),
               );
             }
           },

@@ -1,28 +1,25 @@
-import 'package:ditonton/domain/entities/tv/tv.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:ditonton/domain/usecases/tv/search_tvs.dart';
+import 'package:ditonton/presentation/bloc/tv/common/tv_event.dart';
+import 'package:ditonton/presentation/bloc/tv/common/tv_state.dart';
 
-part 'event/tv_event.dart';
-part 'state/tv_state.dart';
-
-class SearchTvBloc extends Bloc<SearchEvent, SearchState> {
+class SearchTvBloc extends Bloc<TvEvent, TvState> {
   final SearchTvs _searchTvs;
 
-  SearchTvBloc(this._searchTvs) : super(SearchEmpty()) {
-    on<OnQueryChanged>((event, emit) async {
+  SearchTvBloc(this._searchTvs) : super(TvEmpty()) {
+    on<OnTvSearch>((event, emit) async {
       final query = event.query;
 
-      emit(SearchLoading());
+      emit(TvLoading());
       final result = await _searchTvs.execute(query);
 
       result.fold(
         (failure) {
-          emit(SearchError(failure.message));
+          emit(TvError(failure.message));
         },
         (data) {
-          emit(SearchHasData(data));
+          emit(SearchTvHasData(data));
         },
       );
     }, transformer: debounce(const Duration(milliseconds: 500)));
