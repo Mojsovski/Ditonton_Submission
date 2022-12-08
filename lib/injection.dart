@@ -30,12 +30,6 @@ import 'package:ditonton/domain/usecases/tv/remove_watchlist_tvs.dart';
 import 'package:ditonton/domain/usecases/tv/save_watchlist_tvs.dart';
 import 'package:ditonton/domain/usecases/tv/search_tvs.dart';
 
-import 'package:ditonton/presentation/provider/movie/movie_detail_notifier.dart';
-import 'package:ditonton/presentation/provider/movie/watchlist_movie_notifier.dart';
-
-import 'package:ditonton/presentation/bloc/movie/search_movie_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/search_tv_bloc.dart';
-
 import 'package:ditonton/presentation/bloc/tv/airing_today_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/on_the_air_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/popular_tv_bloc.dart';
@@ -43,10 +37,15 @@ import 'package:ditonton/presentation/bloc/tv/top_rated_tv_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/watchlist_tv_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_detail_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/tv_recommendations_bloc.dart';
+import 'package:ditonton/presentation/bloc/tv/search_tv_bloc.dart';
 
 import 'package:ditonton/presentation/bloc/movie/now_playing_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/popular_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/top_rated_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/watchlist_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/movie_detail_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/movie_recommendations_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/search_movie_bloc.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
@@ -55,6 +54,7 @@ final locator = GetIt.instance;
 
 void init() {
   //bloc
+  //tv
   locator.registerFactory(
     () => SearchMovieBloc(
       locator(),
@@ -112,7 +112,7 @@ void init() {
     ),
   );
 
-  // provider
+  //movie
 
   locator.registerFactory(
     () => NowPlayingMoviesBloc(
@@ -133,18 +133,23 @@ void init() {
   );
 
   locator.registerFactory(
-    () => MovieDetailNotifier(
-      getMovieDetail: locator(),
-      getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
+    () => WatchlistMoviesBloc(
+      locator(),
+      locator(),
+      locator(),
+      locator(),
     ),
   );
 
   locator.registerFactory(
-    () => WatchlistMovieNotifier(
-      getWatchlistMovies: locator(),
+    () => MovieRecommendationsBloc(
+      locator(),
+    ),
+  );
+
+  locator.registerFactory(
+    () => MovieDetailBloc(
+      locator(),
     ),
   );
 

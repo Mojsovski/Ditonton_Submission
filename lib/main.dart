@@ -8,8 +8,6 @@ import 'package:ditonton/presentation/pages/movie/popular_movies_page.dart';
 import 'package:ditonton/presentation/pages/movie/search_movie_page.dart';
 import 'package:ditonton/presentation/pages/movie/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
-import 'package:ditonton/presentation/provider/movie/movie_detail_notifier.dart';
-import 'package:ditonton/presentation/provider/movie/watchlist_movie_notifier.dart';
 
 //tv
 import 'package:ditonton/presentation/pages/tv/airing_today_tvs_page.dart';
@@ -34,6 +32,9 @@ import 'package:ditonton/presentation/bloc/tv/tv_recommendations_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/now_playing_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/popular_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/top_rated_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/watchlist_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/movie_detail_bloc.dart';
+import 'package:ditonton/presentation/bloc/movie/movie_recommendations_bloc.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -52,13 +53,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         //Movie
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieDetailNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistMovieNotifier>(),
-        ),
-
         BlocProvider(
           create: (_) => di.locator<NowPlayingMoviesBloc>(),
         ),
@@ -68,11 +62,20 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) => di.locator<TopRatedMoviesBloc>(),
         ),
-
-        //Bloc
+        BlocProvider(
+          create: (_) => di.locator<WatchlistMoviesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<MovieDetailBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<MovieRecommendationsBloc>(),
+        ),
         BlocProvider(
           create: (_) => di.locator<SearchMovieBloc>(),
         ),
+
+        //Tv
         BlocProvider(
           create: (_) => di.locator<SearchTvBloc>(),
         ),
