@@ -21,7 +21,6 @@ import 'package:ditonton/presentation/bloc/tv/top_rated_tv_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv/common/tv_state.dart';
 import 'package:ditonton/presentation/bloc/tv/common/tv_event.dart';
 
-
 class HomeTvPage extends StatefulWidget {
   static const ROUTE_NAME = '/home-tv';
   @override

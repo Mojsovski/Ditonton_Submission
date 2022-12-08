@@ -4,11 +4,18 @@ buildscript {
         google()
         jcenter()
     }
+    repositories {
+        // Periksa apakah sudah menyertakan Maven Google atau tidak.
+        google()  // Google's Maven repository
+    }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.13'  // Google Services plugin
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
     }
+    
 }
 
 allprojects {
