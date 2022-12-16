@@ -49,111 +49,39 @@ import 'package:ditonton/presentation/bloc/movie/movie_recommendations_bloc.dart
 import 'package:ditonton/presentation/bloc/movie/search_movie_bloc.dart';
 
 import 'package:get_it/get_it.dart';
-import 'package:http/io_client.dart';
 
 final locator = GetIt.instance;
 
 void init() async {
-  IOClient ioClient = await Certificate.ioClient;
   //bloc
   //tv
-  locator.registerFactory(
-    () => SearchMovieBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => SearchTvBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => AiringTodayTvsBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => OnTheAirTvsBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => PopularTvsBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => TopRatedTvsBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => WatchlistTvsBloc(
-      locator(),
-      locator(),
-      locator(),
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => TvDetailBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => TvRecommendationsBloc(
-      locator(),
-    ),
-  );
+  locator.registerFactory(() => SearchMovieBloc(locator()));
+  locator.registerFactory(() => SearchTvBloc(locator()));
+  locator.registerFactory(() => AiringTodayTvsBloc(locator()));
+  locator.registerFactory(() => OnTheAirTvsBloc(locator()));
+  locator.registerFactory(() => PopularTvsBloc(locator()));
+  locator.registerFactory(() => TopRatedTvsBloc(locator()));
+  locator.registerFactory(() => WatchlistTvsBloc(
+        locator(),
+        locator(),
+        locator(),
+        locator(),
+      ));
+  locator.registerFactory(() => TvDetailBloc(locator()));
+  locator.registerFactory(() => TvRecommendationsBloc(locator()));
 
   //movie
-
-  locator.registerFactory(
-    () => NowPlayingMoviesBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => PopularMoviesBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => TopRatedMoviesBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => WatchlistMoviesBloc(
-      locator(),
-      locator(),
-      locator(),
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => MovieRecommendationsBloc(
-      locator(),
-    ),
-  );
-
-  locator.registerFactory(
-    () => MovieDetailBloc(
-      locator(),
-    ),
-  );
+  locator.registerFactory(() => NowPlayingMoviesBloc(locator()));
+  locator.registerFactory(() => PopularMoviesBloc(locator()));
+  locator.registerFactory(() => TopRatedMoviesBloc(locator()));
+  locator.registerFactory(() => WatchlistMoviesBloc(
+        locator(),
+        locator(),
+        locator(),
+        locator(),
+      ));
+  locator.registerFactory(() => MovieRecommendationsBloc(locator()));
+  locator.registerFactory(() => MovieDetailBloc(locator()));
 
   // use case movie
   locator.registerLazySingleton(() => GetNowPlayingMovies(locator()));
@@ -211,5 +139,5 @@ void init() async {
   locator.registerLazySingleton<DatabaseHelperTv>(() => DatabaseHelperTv());
 
   // external
-  locator.registerLazySingleton(() => ioClient);
+  locator.registerLazySingleton(() => Certificate.client);
 }

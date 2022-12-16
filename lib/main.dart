@@ -43,12 +43,14 @@ import 'package:ditonton/injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ditonton/firebase_options.dart';
+import 'package:ditonton/data/datasources/security/certificate.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Certificate.init();
   di.init();
   runApp(MyApp());
 }

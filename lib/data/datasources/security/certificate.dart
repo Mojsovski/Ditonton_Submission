@@ -3,8 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:http/io_client.dart';
 
 class Certificate {
-  static Future<IOClient> get ioClient async {
-    final sslCert = await rootBundle.load('assets/certificate.pem');
+  static IOClient? ioClient;
+
+  static IOClient get client => ioClient!;
+
+  static Future<void> init() async {
+    ioClient = await IoClient;
+  }
+
+  static Future<IOClient> get IoClient async {
+    final sslCert = await rootBundle.load('assets/certificate.crt');
     SecurityContext securityContext = SecurityContext(withTrustedRoots: false);
     securityContext.setTrustedCertificatesBytes(sslCert.buffer.asInt8List());
     HttpClient client = HttpClient(context: securityContext);
