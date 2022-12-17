@@ -7,8 +7,8 @@ import 'package:ditonton/data/models/tv/tv_table.dart';
 import 'package:ditonton/domain/entities/tv/tv.dart';
 import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 import 'package:ditonton/domain/repositories/tv_repository.dart';
-import 'package:ditonton/common/exception.dart';
-import 'package:ditonton/common/failure.dart';
+import 'package:core/utils/exception.dart';
+import 'package:core/utils/failure.dart';
 
 class TvRepositoryImpl implements TvRepository {
   final TvRemoteDataSource remoteDataSource;

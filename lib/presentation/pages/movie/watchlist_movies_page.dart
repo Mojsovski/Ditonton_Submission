@@ -1,10 +1,11 @@
-import 'package:ditonton/common/utils.dart';
 import 'package:ditonton/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/watchlist_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/common/movie_state.dart';
 import 'package:ditonton/presentation/bloc/movie/common/movie_event.dart';
+
+import 'package:core/utils/utils.dart';
 
 class WatchlistMoviesPage extends StatefulWidget {
   static const ROUTE_NAME = '/watchlist-movie';

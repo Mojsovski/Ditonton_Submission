@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:ditonton/data/models/tv/tv_detail_model.dart';
 import 'package:ditonton/data/models/tv/tv_model.dart';
 import 'package:ditonton/data/models/tv/tv_response.dart';
-import 'package:ditonton/common/exception.dart';
+import 'package:core/utils/exception.dart';
 import 'package:http/io_client.dart';
 
 abstract class TvRemoteDataSource {
