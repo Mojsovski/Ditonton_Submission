@@ -9,6 +9,8 @@ export 'data/models/movie/movie_response.dart';
 export 'data/models/movie/movie_table.dart';
 export 'data/repositories/movie/movie_repository_impl.dart';
 
+export 'domain/entities/movie/movie.dart';
+export 'domain/entities/movie/movie_detail.dart';
 export 'domain/repositories/movie_repository.dart';
 export 'domain/usecases/movie/get_movie_detail.dart';
 export 'domain/usecases/movie/get_movie_recommendations.dart';
