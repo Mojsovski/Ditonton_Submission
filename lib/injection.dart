@@ -1,52 +1,8 @@
-import 'package:ditonton/data/datasources/db/database_helper_movie.dart';
-import 'package:ditonton/data/datasources/db/database_helper_tv.dart';
-import 'package:ditonton/data/datasources/movie/movie_local_data_source.dart';
-import 'package:ditonton/data/datasources/movie/movie_remote_data_source.dart';
-import 'package:ditonton/data/datasources/security/certificate.dart';
-import 'package:ditonton/data/datasources/tv/tv_local_data_source.dart';
-import 'package:ditonton/data/datasources/tv/tv_remote_data_source.dart';
-import 'package:ditonton/data/repositories/movie/movie_repository_impl.dart';
-import 'package:ditonton/data/repositories/tv/tv_repository_impl.dart';
-import 'package:ditonton/domain/repositories/movie_repository.dart';
-import 'package:ditonton/domain/repositories/tv_repository.dart';
-import 'package:ditonton/domain/usecases/movie/get_movie_detail.dart';
-import 'package:ditonton/domain/usecases/movie/get_movie_recommendations.dart';
-import 'package:ditonton/domain/usecases/movie/get_now_playing_movies.dart';
-import 'package:ditonton/domain/usecases/movie/get_popular_movies.dart';
-import 'package:ditonton/domain/usecases/movie/get_top_rated_movies.dart';
-import 'package:ditonton/domain/usecases/movie/get_watchlist_movies.dart';
-import 'package:ditonton/domain/usecases/movie/get_watchlist_movies_status.dart';
-import 'package:ditonton/domain/usecases/movie/remove_watchlist.dart';
-import 'package:ditonton/domain/usecases/movie/save_watchlist.dart';
-import 'package:ditonton/domain/usecases/movie/search_movies.dart';
-import 'package:ditonton/domain/usecases/tv/get_airing_today_tvs.dart';
-import 'package:ditonton/domain/usecases/tv/get_on_the_air_tvs.dart';
-import 'package:ditonton/domain/usecases/tv/get_popular_tvs.dart';
-import 'package:ditonton/domain/usecases/tv/get_top_rated_tvs.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_detail.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_recommendations.dart';
-import 'package:ditonton/domain/usecases/tv/get_watchlist_tvs_status.dart';
-import 'package:ditonton/domain/usecases/tv/get_watchlist_tvs.dart';
-import 'package:ditonton/domain/usecases/tv/remove_watchlist_tvs.dart';
-import 'package:ditonton/domain/usecases/tv/save_watchlist_tvs.dart';
-import 'package:ditonton/domain/usecases/tv/search_tvs.dart';
+//module
 
-import 'package:ditonton/presentation/bloc/tv/airing_today_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/on_the_air_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/popular_tv_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/top_rated_tv_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/watchlist_tv_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/tv_detail_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/tv_recommendations_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/search_tv_bloc.dart';
-
-import 'package:ditonton/presentation/bloc/movie/now_playing_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/popular_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/top_rated_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/watchlist_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/movie_detail_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/movie_recommendations_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/search_movie_bloc.dart';
+import 'package:core/core.dart';
+import 'package:tv/tv.dart';
+import 'package:movie/movie.dart';
 
 import 'package:get_it/get_it.dart';
 

@@ -18,7 +18,7 @@ packages:
   about:
     dependency: "direct main"
     description:
-      path: about
+      path: "modules/about"
       relative: true
     source: path
     version: "0.0.1"
@@ -200,7 +200,7 @@ packages:
   core:
     dependency: "direct main"
     description:
-      path: core
+      path: "modules/core"
       relative: true
     source: path
     version: "0.0.1"
@@ -485,6 +485,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.0"
+  movie:
+    dependency: "direct main"
+    description:
+      path: "modules/movie"
+      relative: true
+    source: path
+    version: "0.0.1"
   nested:
     dependency: transitive
     description:
@@ -784,6 +791,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  tv:
+    dependency: "direct main"
+    description:
+      path: "modules/tv"
+      relative: true
+    source: path
+    version: "0.0.1"
   typed_data:
     dependency: transitive
     description:
@@ -855,5 +869,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18.0 <3.0.0"
+  dart: ">=2.18.6 <3.0.0"
   flutter: ">=3.3.0"

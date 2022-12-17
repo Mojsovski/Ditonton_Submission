@@ -1,43 +1,10 @@
+//module
 import 'package:about/about.dart';
 import 'package:core/core.dart';
+import 'package:tv/tv.dart';
+import 'package:movie/movie.dart';
 
-import 'package:core/utils/utils.dart';
-//movie
-
-import 'package:ditonton/presentation/pages/movie/movie_detail_page.dart';
-import 'package:ditonton/presentation/pages/movie/home_movie_page.dart';
-import 'package:ditonton/presentation/pages/movie/popular_movies_page.dart';
-import 'package:ditonton/presentation/pages/movie/search_movie_page.dart';
-import 'package:ditonton/presentation/pages/movie/top_rated_movies_page.dart';
-import 'package:ditonton/presentation/pages/movie/watchlist_movies_page.dart';
-
-//tv
-import 'package:ditonton/presentation/pages/tv/airing_today_tvs_page.dart';
-import 'package:ditonton/presentation/pages/tv/home_tv_page.dart';
-import 'package:ditonton/presentation/pages/tv/on_the_air_tvs_page.dart';
-import 'package:ditonton/presentation/pages/tv/popular_tvs_page.dart';
-import 'package:ditonton/presentation/pages/tv/search_tvs_page.dart';
-import 'package:ditonton/presentation/pages/tv/top_rated_tvs_page.dart';
-import 'package:ditonton/presentation/pages/tv/tv_detail_page.dart';
-import 'package:ditonton/presentation/pages/tv/watchlist_tvs_page.dart';
-
-import 'package:ditonton/presentation/bloc/movie/search_movie_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/search_tv_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/airing_today_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/on_the_air_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/popular_tv_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/top_rated_tv_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/watchlist_tv_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/tv_detail_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv/tv_recommendations_bloc.dart';
-
-import 'package:ditonton/presentation/bloc/movie/now_playing_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/popular_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/top_rated_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/watchlist_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/movie_detail_bloc.dart';
-import 'package:ditonton/presentation/bloc/movie/movie_recommendations_bloc.dart';
-
+//pub
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -45,7 +12,6 @@ import 'package:ditonton/injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ditonton/firebase_options.dart';
-import 'package:ditonton/data/datasources/security/certificate.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
