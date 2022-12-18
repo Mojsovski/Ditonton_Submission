@@ -3,25 +3,27 @@ import 'package:tv/tv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../../dummy_data/tv/dummy_objects_tv.dart';
-import '../../../helpers/test_helper.mocks.dart';
+import '../../../../../../test/helpers/test_helper.mocks.dart';
 
 void main() {
-  late GetWatchlistTvs usecase;
+  late SearchTvs usecase;
   late MockTvRepository mockTvRepository;
 
   setUp(() {
     mockTvRepository = MockTvRepository();
-    usecase = GetWatchlistTvs(mockTvRepository);
+    usecase = SearchTvs(mockTvRepository);
   });
+
+  final tTvs = <Tv>[];
+  final tQuery = 'spy x family';
 
   test('should get list of tvs from the repository', () async {
     // arrange
-    when(mockTvRepository.getWatchlistTvs())
-        .thenAnswer((_) async => Right(testTvList));
+    when(mockTvRepository.searchTvs(tQuery))
+        .thenAnswer((_) async => Right(tTvs));
     // act
-    final result = await usecase.execute();
+    final result = await usecase.execute(tQuery);
     // assert
-    expect(result, Right(testTvList));
+    expect(result, Right(tTvs));
   });
 }
