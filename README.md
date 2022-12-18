@@ -3,9 +3,7 @@
 Repository ini merupakan starter project submission kelas Flutter Expert Dicoding Indonesia.
 
 ---
-
-[![Codemagic build status](https://api.codemagic.io/apps/638f46f38298d2a0faf2babc/638f46f38298d2a0faf2babb/status_badge.svg)]
-(https://codemagic.io/apps/638f46f38298d2a0faf2babc/638f46f38298d2a0faf2babb/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/638f46f38298d2a0faf2babc/638f46f38298d2a0faf2babb/status_badge.svg)](https://codemagic.io/apps/638f46f38298d2a0faf2babc/638f46f38298d2a0faf2babb/latest_build)
 
 ## Tips Submission Awal
 
