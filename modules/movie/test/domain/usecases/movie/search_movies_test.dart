@@ -3,25 +3,27 @@ import 'package:movie/movie.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../../dummy_data/movie/dummy_objects.dart';
-import '../../../helpers/test_helper.mocks.dart';
+import '../../../helpers/test_helper_movie.mocks.dart';
 
 void main() {
-  late GetWatchlistMovies usecase;
+  late SearchMovies usecase;
   late MockMovieRepository mockMovieRepository;
 
   setUp(() {
     mockMovieRepository = MockMovieRepository();
-    usecase = GetWatchlistMovies(mockMovieRepository);
+    usecase = SearchMovies(mockMovieRepository);
   });
+
+  final tMovies = <Movie>[];
+  final tQuery = 'Spiderman';
 
   test('should get list of movies from the repository', () async {
     // arrange
-    when(mockMovieRepository.getWatchlistMovies())
-        .thenAnswer((_) async => Right(testMovieList));
+    when(mockMovieRepository.searchMovies(tQuery))
+        .thenAnswer((_) async => Right(tMovies));
     // act
-    final result = await usecase.execute();
+    final result = await usecase.execute(tQuery);
     // assert
-    expect(result, Right(testMovieList));
+    expect(result, Right(tMovies));
   });
 }

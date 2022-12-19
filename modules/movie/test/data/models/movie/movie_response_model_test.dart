@@ -4,7 +4,7 @@ import 'package:movie/data/models/movie/movie_model.dart';
 import 'package:movie/data/models/movie/movie_response.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../../json_reader.dart';
+import '../../../../../../modules/core/test/json_reader.dart';
 
 void main() {
   final tMovieModel = MovieModel(

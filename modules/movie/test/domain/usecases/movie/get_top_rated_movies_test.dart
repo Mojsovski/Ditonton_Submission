@@ -3,22 +3,22 @@ import 'package:movie/movie.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../../helpers/test_helper.mocks.dart';
+import '../../../helpers/test_helper_movie.mocks.dart';
 
 void main() {
-  late GetNowPlayingMovies usecase;
+  late GetTopRatedMovies usecase;
   late MockMovieRepository mockMovieRepository;
 
   setUp(() {
     mockMovieRepository = MockMovieRepository();
-    usecase = GetNowPlayingMovies(mockMovieRepository);
+    usecase = GetTopRatedMovies(mockMovieRepository);
   });
 
   final tMovies = <Movie>[];
 
-  test('should get list of movies from the repository', () async {
+  test('should get list of movies from repository', () async {
     // arrange
-    when(mockMovieRepository.getNowPlayingMovies())
+    when(mockMovieRepository.getTopRatedMovies())
         .thenAnswer((_) async => Right(tMovies));
     // act
     final result = await usecase.execute();
