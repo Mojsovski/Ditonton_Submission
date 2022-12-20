@@ -60,3 +60,6 @@ export 'presentation/pages/tv/search_tvs_page.dart';
 export 'presentation/pages/tv/top_rated_tvs_page.dart';
 export 'presentation/pages/tv/watchlist_tvs_page.dart';
 export 'presentation/pages/tv/on_the_air_tvs_page.dart';
+
+//widget
+export 'presentation/widgets/tv_card_list.dart';

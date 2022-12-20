@@ -6,8 +6,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-import '.../../../../../test/dummy_data/tv/dummy_objects_tv.dart';
-import '../../../../../test/helpers/test_helper.mocks.dart';
+import '../../dummy_data/tv/dummy_objects_tv.dart';
+import '../../helpers/test_helper_tv.mocks.dart';
 
 void main() {
   late TvRepositoryImpl repository;

@@ -37,21 +37,18 @@ class _PopularTvsPageState extends State<PopularTvsPage> {
               );
             } else if (state is TvHasData) {
               final result = state.result;
-              return Expanded(
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemBuilder: (context, index) {
-                    final tv = result[index];
-                    return TvCard(tv);
-                  },
-                  itemCount: result.length,
-                ),
+              return ListView.builder(
+                padding: const EdgeInsets.all(8),
+                itemBuilder: (context, index) {
+                  final tv = result[index];
+                  return TvCard(tv);
+                },
+                itemCount: result.length,
               );
             } else if (state is TvError) {
-              return Expanded(
-                child: Center(
-                  child: Text(state.message),
-                ),
+              return Center(
+                key: const Key('error_message'),
+                child: Text(state.message),
               );
             } else {
               return Expanded(

@@ -8,6 +8,8 @@ import 'package:tv/presentation/bloc/tv/common/tv_event.dart';
 class OnTheAirTvsPage extends StatefulWidget {
   static const ROUTE_NAME = '/on-the-air-tv';
 
+  const OnTheAirTvsPage({Key? key}) : super(key: key);
+
   @override
   _OnTheAirTvsPageState createState() => _OnTheAirTvsPageState();
 }
@@ -37,21 +39,18 @@ class _OnTheAirTvsPageState extends State<OnTheAirTvsPage> {
               );
             } else if (state is TvHasData) {
               final result = state.result;
-              return Expanded(
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemBuilder: (context, index) {
-                    final tv = result[index];
-                    return TvCard(tv);
-                  },
-                  itemCount: result.length,
-                ),
+              return ListView.builder(
+                padding: const EdgeInsets.all(8),
+                itemBuilder: (context, index) {
+                  final tv = result[index];
+                  return TvCard(tv);
+                },
+                itemCount: result.length,
               );
             } else if (state is TvError) {
-              return Expanded(
-                child: Center(
-                  child: Text(state.message),
-                ),
+              return Center(
+                key: const Key('error_message'),
+                child: Text(state.message),
               );
             } else {
               return Expanded(
