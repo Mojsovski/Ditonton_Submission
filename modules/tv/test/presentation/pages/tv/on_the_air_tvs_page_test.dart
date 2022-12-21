@@ -8,7 +8,7 @@ import 'package:tv/presentation/bloc/tv/common/tv_state.dart';
 import 'package:tv/presentation/pages/tv/on_the_air_tvs_page.dart';
 
 import '../../../dummy_data/tv/dummy_objects_tv.dart';
-import '../../../helpers/bloc_test_helper.dart';
+import '../../../helpers/bloc_test_helper_tv.dart';
 
 void main() {
   late MockOnTheAirTvsBloc mockOnTheAirTvsBloc;

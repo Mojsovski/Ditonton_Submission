@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../dummy_data/tv/dummy_objects_tv.dart';
-import '../../../helpers/bloc_test_helper.dart';
+import '../../../helpers/bloc_test_helper_tv.dart';
 
 void main() {
   late MockAiringTodayTvsBloc mockAiringTodayTvsBloc;

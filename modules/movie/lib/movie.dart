@@ -30,6 +30,8 @@ export 'presentation/bloc/movie/top_rated_bloc.dart';
 export 'presentation/bloc/movie/watchlist_bloc.dart';
 export 'presentation/bloc/movie/movie_detail_bloc.dart';
 export 'presentation/bloc/movie/movie_recommendations_bloc.dart';
+export 'presentation/bloc/movie/common/movie_event.dart';
+export 'presentation/bloc/movie/common/movie_state.dart';
 
 export 'presentation/pages/movie/movie_detail_page.dart';
 export 'presentation/pages/movie/home_movie_page.dart';
@@ -37,3 +39,6 @@ export 'presentation/pages/movie/popular_movies_page.dart';
 export 'presentation/pages/movie/search_movie_page.dart';
 export 'presentation/pages/movie/top_rated_movies_page.dart';
 export 'presentation/pages/movie/watchlist_movies_page.dart';
+
+//widget
+export 'presentation/widgets/movie_card_list.dart';
