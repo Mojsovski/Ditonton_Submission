@@ -62,8 +62,7 @@ void main() {
 
   testWidgets('Page should display text with message when Error',
       (WidgetTester tester) async {
-    when(() => mockTopRatedTvsBloc.state)
-        .thenReturn(TvError('Something went wrong'));
+    when(() => mockTopRatedTvsBloc.state).thenReturn(TvError('Error'));
 
     final textFinder = find.byKey(const Key('error_message'));
 

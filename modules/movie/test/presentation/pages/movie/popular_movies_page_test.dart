@@ -64,8 +64,7 @@ void main() {
 
   testWidgets('Page should display text with message when Error',
       (WidgetTester tester) async {
-    when(() => mockPopularMoviesBloc.state)
-        .thenReturn(MovieError('Something went wrong'));
+    when(() => mockPopularMoviesBloc.state).thenReturn(MovieError('Error'));
 
     final textFinder = find.byKey(const Key('error_message'));
 

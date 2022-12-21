@@ -50,21 +50,17 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
               );
             } else if (state is MovieHasData) {
               final result = state.result;
-              return Expanded(
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemBuilder: (context, index) {
-                    final movie = result[index];
-                    return MovieCard(movie);
-                  },
-                  itemCount: result.length,
-                ),
+              return ListView.builder(
+                padding: const EdgeInsets.all(8),
+                itemBuilder: (context, index) {
+                  final movie = result[index];
+                  return MovieCard(movie);
+                },
+                itemCount: result.length,
               );
             } else if (state is MovieError) {
-              return Expanded(
-                child: Center(
-                  child: Text(state.message),
-                ),
+              return Center(
+                child: Text(state.message),
               );
             } else {
               return Expanded(
