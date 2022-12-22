@@ -118,7 +118,12 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                   } else if (state is MovieHasData) {
                     return MovieList(state.result);
                   } else {
-                    return Text('Failed');
+                    return Center(
+                      child: Text(
+                        'Failed',
+                        key: const Key('failed'),
+                      ),
+                    );
                   }
                 },
               ),
@@ -136,7 +141,12 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                   } else if (state is MovieHasData) {
                     return MovieList(state.result);
                   } else {
-                    return Text('Failed');
+                    return Center(
+                      child: Text(
+                        'Failed',
+                        key: const Key('failed'),
+                      ),
+                    );
                   }
                 },
               ),
@@ -154,7 +164,12 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                   } else if (state is MovieHasData) {
                     return MovieList(state.result);
                   } else {
-                    return Text('Failed');
+                    return Center(
+                      child: Text(
+                        'Failed',
+                        key: const Key('failed'),
+                      ),
+                    );
                   }
                 },
               ),

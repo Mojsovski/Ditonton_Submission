@@ -47,14 +47,12 @@ runTests () {
 
 runReport() {
     if [ -f "coverage/lcov.info" ] && ! [ "$TRAVIS" ]; then
-        # genhtml coverage/lcov.info -o coverage/html --no-function-coverage -s -p `pwd`/coverage/html
-        # ./genhtml.perl ./coverage/lcov.info -o coverage/html
-        C:/ProgramData/chocolatey/lib/lcov/tools/bin/genhtml -o coverage/html coverage/lcov.info --no-function-coverage -s -p `pwd`/coverage/html
+        genhtml coverage/lcov.info -o coverage --no-function-coverage -s -p `pwd`/coverage
         
 		if $IsWindows || $ENV:OS; then
-			start coverage/html/index.html
+			start coverage/index.html
 		else
-			open coverage/html/index.html
+			open coverage/index.html
 		fi
     fi
 }

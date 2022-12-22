@@ -123,7 +123,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   } else if (state is TvHasData) {
                     return TvList(state.result);
                   } else {
-                    return Text('Failed');
+                    return Text(
+                      'Failed',
+                      key: Key('Failed'),
+                    );
                   }
                 },
               ),
@@ -141,7 +144,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   } else if (state is TvHasData) {
                     return TvList(state.result);
                   } else {
-                    return Text('Failed');
+                    return Text(
+                      'Failed',
+                      key: Key('Failed'),
+                    );
                   }
                 },
               ),
@@ -159,7 +165,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   } else if (state is TvHasData) {
                     return TvList(state.result);
                   } else {
-                    return Text('Failed');
+                    return Text(
+                      'Failed',
+                      key: Key('Failed'),
+                    );
                   }
                 },
               ),
@@ -177,7 +186,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   } else if (state is TvHasData) {
                     return TvList(state.result);
                   } else {
-                    return Text('Failed');
+                    return Center(
+                      key: const Key('failed'),
+                      child: Text('Failed'),
+                    );
                   }
                 },
               ),

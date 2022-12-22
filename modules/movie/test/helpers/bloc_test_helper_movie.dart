@@ -23,3 +23,6 @@ class MockMovieRecommendationsBloc extends MockBloc<MovieEvent, MovieState>
 
 class MockWatchlistMoviesBloc extends MockBloc<MovieEvent, MovieState>
     implements WatchlistMoviesBloc {}
+
+class MockSearchMovieBloc extends MockBloc<MovieEvent, MovieState>
+    implements SearchMovieBloc {}

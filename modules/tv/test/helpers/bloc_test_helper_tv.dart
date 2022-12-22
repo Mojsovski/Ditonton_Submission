@@ -26,3 +26,6 @@ class MockTvRecommendationsBloc extends MockBloc<TvEvent, TvState>
 
 class MockWatchlistTvsBloc extends MockBloc<TvEvent, TvState>
     implements WatchlistTvsBloc {}
+
+class MockSearchTvBloc extends MockBloc<TvEvent, TvState>
+    implements SearchTvBloc {}

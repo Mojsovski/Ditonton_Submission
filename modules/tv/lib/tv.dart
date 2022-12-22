@@ -7,10 +7,8 @@ export 'data/datasources/tv/tv_local_data_source.dart';
 export 'data/datasources/tv/tv_remote_data_source.dart';
 //models
 export 'data/models/tv/tv_detail_model.dart';
-export 'data/models/tv/tv_episode_model.dart';
 export 'data/models/tv/tv_model.dart';
 export 'data/models/tv/tv_response.dart';
-export 'data/models/tv/tv_season_detail_model.dart';
 export 'data/models/tv/tv_season_model.dart';
 export 'data/models/tv/tv_table.dart';
 //repositories
@@ -20,9 +18,7 @@ export 'data/repositories/tv/tv_repository_impl.dart';
 //entities
 export 'domain/entities/tv/tv.dart';
 export 'domain/entities/tv/tv_detail.dart';
-export 'domain/entities/tv/tv_episode.dart';
 export 'domain/entities/tv/tv_season.dart';
-export 'domain/entities/tv/tv_season_detail.dart';
 //repositories
 export 'domain/repositories/tv_repository.dart';
 //usecases

@@ -57,6 +57,7 @@ class SearchMoviePage extends StatelessWidget {
                 } else if (state is MovieError) {
                   return Expanded(
                     child: Center(
+                      key: const Key('error'),
                       child: Text(state.message),
                     ),
                   );
